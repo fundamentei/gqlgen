@@ -1,7 +1,9 @@
 {
   "name": "gqlgen",
   "description": "A cli script to easily generate GraphQL queries/mutations for your frontend",
-  "private": true,
+  "license": "MIT",
+  "version": "0.0.1",
+  "repository": "github:fundamentei/gqlgen",
   "dependencies": {
     "graphql": "^15.5.0",
     "node-fetch": "^2.6.1",
