@@ -225,6 +225,24 @@ function generateCodeForOperation(operation, types, maxFieldsSelectionDepth = 2)
   // Operation name
   code.push(operation.name);
 
+  // Arguments usage
+  if (operation.astValue.arguments && operation.astValue.arguments.length > 0) {
+    // Start arguments
+    code.push("(");
+
+    code.push(
+      operation.astValue.arguments
+        .map((arg) => {
+          return `${arg.name.value}: $${arg.name.value}`;
+        })
+        .join(",")
+    );
+
+    // End arguments
+    code.push(")");
+  }
+  // End arguments usage
+
   // Fields selection
   const returnType = getTypeName(operation.astValue.type, false);
 
