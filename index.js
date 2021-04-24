@@ -10,8 +10,6 @@ const fetch = require("node-fetch");
 const prettier = require("prettier");
 
 async function main() {
-  const baseDirectory = process.env.INIT_CWD || __dirname;
-
   yargs
     .command(
       "$0 <url> <filter>",
@@ -71,7 +69,7 @@ async function main() {
 
         yargs.option("write", {
           type: "boolean",
-          describe: `Writes the generated code to "${baseDirectory}"`,
+          describe: `Writes the generated code to the filesystem`,
         });
       },
       /**
@@ -104,12 +102,12 @@ async function main() {
 
         if (argv.write) {
           const isSafeToWrite = nodes.every(({ fileName }) => {
-            return !existsSync(path.join(baseDirectory, fileName));
+            return !existsSync(fileName);
           });
 
           if (isSafeToWrite) {
             nodes.forEach(({ fileName, code }) => {
-              writeFileSync(path.join(baseDirectory, fileName), code);
+              writeFileSync(fileName, code);
               console.log("Written to %s", fileName);
             });
           }
