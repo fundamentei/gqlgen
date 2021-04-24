@@ -1,0 +1,11 @@
+{
+  "name": "gqlgen",
+  "description": "A cli script to easily generate GraphQL queries/mutations for your frontend",
+  "private": true,
+  "dependencies": {
+    "graphql": "^15.5.0",
+    "node-fetch": "^2.6.1",
+    "prettier": "^2.2.1",
+    "yargs": "^16.2.0"
+  }
+}
