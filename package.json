@@ -4,6 +4,9 @@
   "license": "MIT",
   "version": "0.0.1",
   "repository": "github:fundamentei/gqlgen",
+  "bin": {
+    "gqlgen": "index.js"
+  },
   "dependencies": {
     "graphql": "^15.5.0",
     "node-fetch": "^2.6.1",
