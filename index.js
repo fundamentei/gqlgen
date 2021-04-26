@@ -129,7 +129,7 @@ async function main() {
  */
 async function fetchSchemaWithIntrospection(url) {
   const introspectionQuery = getIntrospectionQuery();
-  const response = await fetch("http://localhost:25202/", {
+  const response = await fetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
