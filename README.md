@@ -43,4 +43,4 @@ $ npx --quiet github:fundamentei/gqlgen http://localhost:25202 query |fzf --reve
 
 The command above will prompt you to select a list of all available queries to generate code for.
 
-> **Bonus**: you can even create a **package.json** script with the command above so you can easily run it from your app repository. 🤭
+> **Pro tip**: you can even create a **package.json** script with the command above so you can easily run it from your app repository. 🤭
